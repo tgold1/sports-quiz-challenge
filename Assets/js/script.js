@@ -1,24 +1,107 @@
 var allQuestions = document.querySelector(".allQuestions");
 var timer = document.querySelector(".startQuiz")
-var textContent = document.querySelector(".textContent")
-var userScore
+var textContent = document.querySelector(".allQuestions")
+var userScore 
+var startQuiz 
 
-function allQuestions () {
-"In Major League Baseball a game is _____ innings long?" ;["seven", "eight", "nine", "ten", 2]
-"In football the endzone is _______ yards deep?" ;["15", "10", "12", "14", 1]
-"A National Basketball Association game has _________ quarters in the game?" ;["three", "four", "five", "two", 1]
-"In ice hockey if you cross the blueline before the ________ you are offsides?" ;["puck", "defense", "offense", "goalie", 0]
-"In baseball a homerun is when the baseball is hit over the _________?" ;["outfielders", "infiedlers", "outfield grass", "wall", 3]
-"What do you wear in football that protects you from getting hit in the head a ____________?" ;["hat", "helmet", "mask", "shield", 1]
-"In what sport can you not use your hands _____________?" ;["baseball", "volleyball", "tennis", "soccer", 3]
-"When basketball was first invented, the basket that was first used was a ____________ basket?" ;["banana", "grapefruit", "peach", "plum", 2]
+function init () {
+  startQuizbutton.addEventListner("click", startQuiz) 
+} 
+
+function startQuiz () {
+  allQuestions
+  timerInterval = 120; 
+  startQuizbutton.disabled = false;
+  renderallQuestions ()
 }
+const allQuestions = [
+  {
+question: "In Major League Baseball a game is _____ innings long?", 
+answers:  {
+   a: "seven", 
+   b: "eight", 
+   c: "nine", 
+   d: "ten"
+},
+correctAnswer: "c"
+  },
+{
+question: "In football the endzone is _______ yards deep?", 
+answers: {
+  a: "15",
+  b: "10", 
+  c: "12", 
+  d: "14"
+},
+correctAnswer: "b"
+},
+{
+question: "A National Basketball Association game has _________ quarters in the game?", 
+answers: {
+  a: "three",
+  b: "four", 
+  c: "five", 
+  d: "two"
+},
+correctAnswer: "b"
+},
+{
+question: "In ice hockey if you cross the blueline before the ________ you are offsides?",
+answers: {
+  a: "puck", 
+  b: "defense", 
+  c: "offense", 
+  d: "goalie"
+},
+correctAnswer: "a"
+},
+{
+question: "In baseball a homerun is when the baseball is hit over the _________?",
+answers: {
+  a: "outfielders", 
+  b: "infiedlers", 
+  c: "outfield grass",
+  d: "wall"
+},
+correctAnswer: "d"
+},
+{
+question: "What do you wear in football that protects you from getting hit in the head a ____________?",
+answers: {
+  a: "hat", 
+  b: "helmet", 
+  c: "mask", 
+  d: "shield"
+},
+correctAnswer:  "b"
+},
+{
+question: "In what sport can you not use your hands _____________?",
+answers: { 
+  a: "baseball",
+  b: "volleyball", 
+  c: "tennis", 
+  d: "soccer"
+},
+correctAnswer: "d"
+},
+{
+question: "When basketball was first invented, the basket that was first used was a ____________ basket?",
+answer: { 
+  a: "banana", 
+  b: "grapefruit", 
+  c: "peach", 
+  d: "plum" 
+},
+correctAnswer: "c"
+},
+]
 var highScores = [];
 
-var userScore = {
-    initials: InputDeviceInfo.value, 
-    userScore: timer.textContent
-}
+//var userScore = {
+    //initials: InputDeviceInfo.value, 
+    //userScore: timer.textContent
+//}
 highScores.push (userScore)
 console.log(highScores)
 JSON.stringify(highScores)
@@ -39,15 +122,6 @@ function setTime() {
     }, 1000);
   }
   
-function init () {
-    
-}
 
-function startQuiz () {
-    allQuestions
-    timerInterval = 120; 
-    startQuizbutton.disabled = true;
-    renderallQuestions ()
-}
 
-startQuizbutton.addEventListner("click", startQuiz)
+
