@@ -1,20 +1,24 @@
 var allQuestions = document.querySelector(".allQuestions");
-var timer = document.querySelector(".startQuiz")
-var textContent = document.querySelector(".allQuestions")
-var userScore 
-var startQuiz 
+var timer = document.querySelector(".startQuiz");
+var textContent = document.querySelector(".allQuestions");
+var userScore;
+var startQuizbutton = document.querySelector(".btn");
+var questions = document.querySelector(".question")
+var answers = document.querySelector(".answers")
+var correctAnswer = document.querySelector(".correctAnswer")
 
-function init () {
-  startQuizbutton.addEventListner("click", startQuiz) 
-} 
 
 function startQuiz () {
-  allQuestions
+  startQuizbutton.addEventListener("click", function () {
+    timerInterval--;
+  })
   timerInterval = 120; 
-  startQuizbutton.disabled = false;
-  renderallQuestions ()
+  startQuizbutton.style.display = "none";
+  beginQuestions ();
 }
-const allQuestions = [
+
+function beginQuestions (){
+const myQuestions = [
   {
 question: "In Major League Baseball a game is _____ innings long?", 
 answers:  {
@@ -96,6 +100,19 @@ answer: {
 correctAnswer: "c"
 },
 ]
+var beginQuestions = true;
+beginQuestions.innerHTML = output.join("correctAnswer");
+ 
+// Iterate
+function iterated () {
+ 
+    // Getting the result display section
+    var result = document.getElementsByClassName("result");
+    result[0].innerText = "";
+ 
+    // Getting the question
+    const question = document.getElementById("questions");
+}
 var highScores = [];
 
 //var userScore = {
@@ -103,7 +120,7 @@ var highScores = [];
     //userScore: timer.textContent
 //}
 highScores.push (userScore)
-console.log(highScores)
+//console.log(highScores)
 JSON.stringify(highScores)
 
 function setTime() {
@@ -124,4 +141,4 @@ function setTime() {
   
 
 
-
+}
