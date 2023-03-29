@@ -7,7 +7,6 @@
 html,
 body,
 .wrapper {
-  height: 100%;
   margin: 0;
   padding: 0;
 }
@@ -68,7 +67,11 @@ header {
   display: block;
   clear: both;
 }
+.timer {
+  display:list-item
 
+
+}
 .btn {
   border: none;
   background-color: hsl(360, 91%, 36%);

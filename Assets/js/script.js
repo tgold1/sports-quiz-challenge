@@ -100,25 +100,16 @@ answer: {
 correctAnswer: "c"
 },
 ]
-var beginQuestions = true;
-beginQuestions.innerHTML = output.join("correctAnswer");
- 
-// Iterate
-function iterated () {
- 
-    // Getting the result display section
-    var result = document.getElementsByClassName("result");
-    result[0].innerText = "";
- 
-    // Getting the question
-    const question = document.getElementById("questions");
+var beginQuestions = document.getElementsByClassName("questions")
+var beginQuestions = document.getElementsByClassName("answers")
+var beginQuestions = document.getElementsByClassName("correctAnswer")
+console.log (myQuestions)
 }
 var highScores = [];
-
-//var userScore = {
-    //initials: InputDeviceInfo.value, 
-    //userScore: timer.textContent
-//}
+var userScore = {
+    initials: InputDeviceInfo.value, 
+    userScore: timer.textContent
+}
 highScores.push (userScore)
 //console.log(highScores)
 JSON.stringify(highScores)
@@ -127,7 +118,7 @@ function setTime() {
     // Sets interval in variable
     var timerInterval = setInterval(function() {
       secondsLeft = 120;
-      timeEl.textContent = secondsLeft + " seconds left till colorsplosion.";
+      timeEl.textContent = secondsLeft 
   
       if(secondsLeft === 0) {
         // Stops execution of action at set interval
@@ -141,4 +132,4 @@ function setTime() {
   
 
 
-}
+
